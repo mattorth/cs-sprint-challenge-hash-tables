@@ -3,7 +3,20 @@ def intersection(arrays):
     YOUR CODE HERE
     """
     # Your code here
+    dict = {}
+    num_arrays = len(arrays)
+    result = []
 
+    for array in arrays:
+        for i in range(len(array)):
+            if array[i] in dict:
+                dict[array[i]] += 1
+                if dict[array[i]] == num_arrays:
+                    result.append(array[i])
+            else:
+                dict[array[i]] = 1
+
+    print(result)
     return result
 
 
